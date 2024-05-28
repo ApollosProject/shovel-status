@@ -16,6 +16,7 @@ Then run the following commands:
 
 ```bash
 python -m venv venv
+. ./venv/bin/activate
 pip install -r requirements.txt
 flask --app api/index run --debug
 ```
