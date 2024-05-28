@@ -40,5 +40,5 @@ def status():
         "num_active_dags": num_active_dags,
         "num_failed_dags": num_failed_dags,
         "percent_failed": percent_failed,
-        "healthy": healthy,
+        "status": "healthy" if healthy else "unhealthy",
     }
