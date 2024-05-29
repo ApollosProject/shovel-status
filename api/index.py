@@ -24,6 +24,8 @@ def status():
         },
         headers={"Authorization": f"Bearer {API_TOKEN}"},
     ).json()["totalCount"]
+    if num_active_dags == 0:
+        return {"status": "no active dags"}
     num_failed_dags = requests.get(
         f"https://api.astronomer.io/v1alpha1/organizations/{ORG_ID}/workspaces/{WORKSPACE_ID}/dags",
         params={
